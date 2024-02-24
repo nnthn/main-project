@@ -1,0 +1,46 @@
+.nav-bar{
+    position:fixed;
+    top:0;
+    right:0;
+    display:flex;
+    font-size:.7rem;
+    width:100vw;
+    border-bottom: 0.1rem solid #E5E8EB;
+    justify-content:space-around;
+}
+.nav-bar ul {
+    width:50vw;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    margin-left: 2rem;
+   
+}
+.logo-container{
+    display:flex;
+    
+}
+}
+.linkStyle{
+    color:black;
+}
+ul li{
+    display:inline-block;
+    margin-left:2rem;
+}
+img{
+    width:2rem;
+    margin-right:1rem;
+}
+
+.signinbutton{
+    margin-left:.2rem;
+    background-color:#E6966A;
+    color:white;
+}
+.loginbutton{
+    background-color: #E5E8EB
+}
+.link-style{
+    color:black;
+}

@@ -1,0 +1,23 @@
+<html>
+  <head>
+  </head>
+  <body>
+ <div className="nav-bar">
+          <div className="logo-container">
+            <img src={logo}  alt="logo"/>
+            <h3>RetailDemandForecasting</h3>
+          </div>
+          <ul>
+            <li>Home</li>
+            <li>Our Services</li>
+            <li>About</li>
+            <li><div className="navbuttons">
+                  <button className="loginbutton">login</button>
+                  <button className="signinbutton">signin</button>
+                </div></li>
+          </ul>
+        </div>
+
+  </body>
+</html>
+       

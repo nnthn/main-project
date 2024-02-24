@@ -1,0 +1,259 @@
+*{
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  margin: 0;
+}
+body{
+    font-size:1rem;
+}
+.nav-bar{
+    position:fixed;
+    top:0;
+    right:0;
+    height:5rem;
+    display:flex;
+    font-size:.7rem;
+    width:100vw;
+    background-color: white;
+    border-bottom: 0.1rem solid #E5E8EB;
+    justify-content:space-between;
+    padding-inline:7vw;
+    box-sizing: border-box;
+}
+.nav-bar ul li a.link-style {
+  text-decoration: none;
+  position: relative;
+}
+
+.nav-bar ul li a.link-style:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: #E6966A; /* Set your desired border color */
+  transition: width 0.3s;
+}
+
+.nav-bar ul li a.link-style:hover:after,
+.nav-bar ul li a.link-style:active:after,
+.nav-bar ul li a.link-style:focus:after {
+  width: 100%;
+}
+
+.nav-bar ul {
+    display: flex;
+    align-items: center;
+}
+.logo-container{
+    display:flex;
+    align-items: center;
+}
+.logo-container > h3{
+    font-size: 1rem;
+}
+.linkStyle{
+    color:black;
+}
+ul li{
+    display:flex;
+    align-items: center;
+    margin-left:2rem;
+    font-weight:600;
+    font-size:1rem;
+    height:3rem;
+}
+.logo-container >img{
+    width:2rem;
+    margin-right:1rem;
+}
+
+.signinbutton{
+    margin-left:.2rem;
+    background-color:#E6966A;
+    color:white;
+    height: 2.2rem;
+    width: 4.2rem;
+    border-radius: .5rem;
+    font-weight: 600;
+}
+.loginbutton{
+    background-color: #E5E8EB;
+    height: 2.2rem;
+    width: 4.2rem;
+    border-radius: .5rem;
+    font-weight: 600;
+}
+.link-style{
+    color:black;
+    text-decoration: none;
+}
+.content{
+    scroll-snap-type: y mandatory;
+    height: 100vh;
+    overflow-y: scroll;
+}
+.home{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 92vh;
+    scroll-snap-align:start;
+    padding-top: 5rem;
+    padding-left: 8rem;
+    padding-right: 4rem;
+}
+.about{
+    height: 100vh;
+    scroll-snap-align:start;
+    padding-top: 5rem;
+    padding-right: 4rem;
+    padding-left: 8rem;
+    display: flex;
+    flex-direction: column;
+}
+.services{
+    height: 100vh;
+    padding-top: 5rem;
+    padding-left: 8rem;
+    padding-right: 4rem;
+    scroll-snap-align:start;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.home > img{
+    width:40rem;
+    margin-right: 4rem;
+}
+.homeh2{
+font-size: 3rem;
+}
+.hometxts{
+    width: 60rem;
+}
+.our-services{
+    font-size: 1rem;
+}
+.services-heading{
+    font-size: 3rem;
+  margin-top: 0;
+  width: 54rem;
+  text-align: center;
+}
+.services-image-container{
+    display: flex;
+    margin-top: 3rem;
+}
+.services-image-container > p{
+  margin-top: 0;
+  margin-left: 2rem;
+  width: 45rem;
+  font-size: 1.3rem;
+}
+.adv-heading{
+    font-size:3rem;    
+    margin-bottom: 0;
+}
+.adv-section{
+    height: 100vh;
+    padding-top: 5rem;
+    padding-right: 4rem;
+    scroll-snap-align:start;
+    display:flex;
+    flex-direction: column;
+   
+}
+.adv-disc{
+    font-size: 1.3rem;
+    margin-top: 1rem;
+    width: 62rem;
+}
+
+.hscroll {
+    width: 100vw;
+    box-sizing: border-box;
+    overflow-x: scroll;
+    display: flex;
+    padding-left:10vw;
+}
+.adv-title{
+    padding-left: 10vw;
+}
+.items {
+    display: inline-block;
+    
+    margin-right: 2rem;
+    min-width: 40rem;
+    margin-top: 3rem;
+    overflow: hidden;
+}
+.item-content{
+    display:flex;
+}
+.item-desc{
+    margin-top: 0;
+    margin-left: 1rem;
+}
+.item-desc > h2{
+    margin-top: 0;
+
+    font-weight: 600;
+}
+.accurate-section{
+    height: 100vh;
+    padding-top: 5rem;
+    padding-left: 8rem;
+    padding-right: 4rem;
+    scroll-snap-align:start;
+    display:flex;
+
+}
+.accurate-section > img{
+    height: 45rem;
+    margin-top: 2rem;
+    
+}
+.accurate-desc{
+    margin-top: 2rem;
+    margin-left: 2rem;
+}
+.accurate-title{
+    font-size: 3rem;
+    margin-top: 0;
+}
+.accurate-subheading{
+    font-weight: 600;
+    
+}
+.accurate-p{
+    font-size: 1.3rem;
+    width: 70rem;
+}
+.abt-item1{
+    display: flex;
+}
+.abt-item2{
+    display: flex;
+    margin-top: 2rem;
+}
+.abt-item-desc{
+    margin-left: 2rem;
+}
+
+.abt-item-desc > h2{
+    margin-top: 0;
+}
+.abt-item-desc > p{
+    width: 30rem;
+}
+.about > h2 {
+    font-size: 1rem;
+    align-self: center;
+}
+footer{
+    width:100vw;
+    box-sizing:border-box;
+    background-color: red;
+    height: 3rem;
+    scroll-snap-align:end;
+}
