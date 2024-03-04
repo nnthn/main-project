@@ -92,20 +92,24 @@ ul li{
     height: 100vh;
     overflow-y: scroll;
 }
+section{
+    box-sizing: border-box;
+    padding-top: 5rem;
+}
 .home{
     display:flex;
     justify-content: space-between;
     align-items: center;
     height: 92vh;
     scroll-snap-align:start;
-    padding-top: 5rem;
+
     padding-left: 8rem;
     padding-right: 4rem;
 }
 .about{
     height: 100vh;
     scroll-snap-align:start;
-    padding-top: 5rem;
+
     padding-right: 4rem;
     padding-left: 8rem;
     display: flex;
@@ -113,7 +117,7 @@ ul li{
 }
 .services{
     height: 100vh;
-    padding-top: 5rem;
+
     padding-left: 8rem;
     padding-right: 4rem;
     scroll-snap-align:start;
@@ -156,7 +160,7 @@ font-size: 3rem;
 }
 .adv-section{
     height: 100vh;
-    padding-top: 5rem;
+
     padding-right: 4rem;
     scroll-snap-align:start;
     display:flex;
@@ -175,6 +179,7 @@ font-size: 3rem;
     overflow-x: scroll;
     display: flex;
     padding-left:10vw;
+    scrollbar-width: none;
 }
 .adv-title{
     padding-left: 10vw;
@@ -201,7 +206,7 @@ font-size: 3rem;
 }
 .accurate-section{
     height: 100vh;
-    padding-top: 5rem;
+
     padding-left: 8rem;
     padding-right: 4rem;
     scroll-snap-align:start;
@@ -214,6 +219,7 @@ font-size: 3rem;
     
 }
 .accurate-desc{
+    width: 66vw;
     margin-top: 2rem;
     margin-left: 2rem;
 }
@@ -227,7 +233,7 @@ font-size: 3rem;
 }
 .accurate-p{
     font-size: 1.3rem;
-    width: 70rem;
+    
 }
 .abt-item1{
     display: flex;
@@ -249,11 +255,41 @@ font-size: 3rem;
 .about > h2 {
     font-size: 1rem;
     align-self: center;
+    margin-block: 2rem 3rem;
 }
 footer{
     width:100vw;
     box-sizing:border-box;
-    background-color: red;
+    background-color:#E6966A;
     height: 3rem;
     scroll-snap-align:end;
+    display: flex;
+    font-size: .8rem;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+main{
+    max-width: 100vw;
+    overflow-x: clip;
+}
+.grocery-img{
+    background: url("./assets/grocery.svg");
+    width: 30vw;
+    background-repeat: no-repeat;
+}
+.about-img{
+    
+    width: 30vw;
+    height: 30vh;
+    background-repeat: no-repeat;
+}
+.abt-img1{
+    background: url("./assets/abtimg1.svg");
+}
+.abt-img2{
+    background: url("./assets/abtimg2.svg");
+}
+.abt-item-desc{
+    width: 50vw;
 }
