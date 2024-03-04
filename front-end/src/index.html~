@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width", initial-scale="1.0">
+    <title>DemandForecasting</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="nav-bar">
+      <div class="logo-container">
+        <img src="./assets/logo.svg"  alt="logo"/>
+        <h3>RetailDemandForecasting</h3>
+      </div>
+      <ul>
+	<li><a class="link-style" href="#home">Home</a></li>
+	<li><a class="link-style" href="#services">Our Services</a></li>
+	<li><a class="link-style" href="#about">About</a></li>
+	
+      </ul>
+    </nav>
+    <main class="content">
+      <section id="home" class="home">
+	<div class="hometxts">
+	  <h2 class="homeh2">Predict and Analyze Product Demand in a Supermarket</h2>
+	  <p>Stay ahead of the competition with accurate demand forecasting and data-driven insights.</p>
+	</div>
+	<img src="./assets/homeImg.svg" alt="vectorimage">
+      </section>
+      <section id="services" class="services">
+	<h2 class="our-services">Our Services</h2>
+	<h2 class="services-heading">Predict and Optimize Product Demand
+	</h2>
+	<div class="services-image-container">
+	  <img src="./assets/womenbuying.svg" alt="womenpurchasing">
+	  <p>DemandForecastingSupermarket is a service that leverages LSTM models to predict product demand in supermarkets. By analyzing historical data and market trends, we provide accurate demand forecasts to help businesses optimize their inventory management and make data-driven decisions.</p>
+	</div>
+      </section>
+      <section class="adv-section">
+	<div class="adv-title">
+	  <h2 class="adv-heading">Advanced Demand Forecasting and Analytics</h2>
+	  <p class="adv-disc">Our service offers advanced demand forecasting and analytics using LSTM models. We provide accurate predictions, data-driven insights, and interactive visualizations to help businesses optimize their inventory and drive growth.</p>
+	</div>
+	<div class="hscroll">
+	 <div class="items">
+	    <div class="item-content">
+	      <img src="./assets/infoimg1.svg" alt="infoimg">
+	      <div class="item-desc">
+		<h2>Accurate Demand Foreacast</h2>
+		<p>
+		  Our LSTM model utilizes advanced algorithms to forecast product demand in your supermarket. By analyzing historical data and market trends, we provide accurate predictions to help you optimize inventory management and reduce costs.</p>
+	      </div>
+	    </div>
+	    
+	  </div>
+	  <div class="items">
+	    <div class="item-content">
+	      <img src="./assets/infoimg2.svg" alt="infoimg">
+	      <div class="item-desc">
+		<h2>Data-driven Insights</h2>
+		<p>
+		  Our platform generates graphs and visualizations that allow you to analyze product demand trends over time. Easily identify peak periods, seasonal fluctuations, and emerging patterns to make informed business decisions.</p>
+	      </div>
+	    </div>
+	    
+	  </div>
+	  <div class="items">
+	    <div class="item-content">
+	      <img src="./assets/infoimg3.svg" alt="infoimg">
+	      <div class="item-desc">
+		<h2>Enhanced User Experience</h2>
+		<p>
+		  We believe in providing a seamless user experience. Our platform includes interactive animations that make data exploration and analysis more engaging and intuitive. Discover insights effortlessly and drive business growth</p>
+	      </div>
+	    </div>
+	    
+	  </div>
+	  
+      </section>
+      <section class="accurate-section">
+	<div class="grocery-img"></div>
+	<div class="accurate-desc">
+	  <h2 class="accurate-title">Accurate Demand Forecasts for Inventory Optimization.</h2>
+	  <h2 class="accurate-subheading">LSTM Model</h2>
+	  <p class="accurate-p">Our service utilizes LSTM models, a type of deep learning algorithm, to accurately predict product demand based on historical data and market trends.</p>
+	  <h2 class="accurate-subheading">Data-driven Insights</h2>
+	  <p class="accurate-p">We provide data-driven insights through visualizations and analytics, allowing businesses to make informed decisions regarding inventory management and product demand.</p>
+	  <h2 class="accurate-subheading">Inventory Optimization</h2>
+	  <p class="accurate-p">By accurately forecasting product demand, our service helps businesses optimize their inventory, reduce costs, and improve overall operational efficiency</p>
+	  
+	</div>
+	
+      </section>
+      <section id="about" class="about">
+	
+	<h2>About</h2>
+	<div class="abt-item1">
+	  <div class="about-img abt-img1"></div>
+	  <div class="abt-item-desc">
+	    <h2>Accurately predict product demand</h2>
+	    <p>Our LSTM model utilizes advanced algorithms to forecast product demand in your supermarket. By analyzing historical data and market trends, we provide accurate predictions to help you optimize inventory management and reduce costs.</p>
+	  </div>
+	</div>
+	<div class="abt-item2">
+	  <div class="about-img abt-img2"></div>
+	  <div class="abt-item-desc">
+	    <h2>Analyze trends with visualizations</h2>
+	    <p>Our platform generates graphs and visualizations that allow you to analyze product demand trends over time. Easily identify peak periods, seasonal fluctuations, and emerging patterns to make informed business decisions.</p>
+	  </div>
+	 
+	</div>
+	
+      </section>
+      <footer >
+		<h3>RetailDemandForecasting</h3>
+      </footer>
+      
+    </main>
+  </body>
+</html>
+       

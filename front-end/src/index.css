@@ -1,6 +1,10 @@
 *{
   font-family: "Poppins", sans-serif;
   font-style: normal;
+  margin: 0;
+}
+.body{
+    font-size:1rem;
 }
 .nav-bar{
     position:fixed;
@@ -12,21 +16,41 @@
     width:100vw;
     background-color: white;
     border-bottom: 0.1rem solid #E5E8EB;
-    justify-content:space-around;
+    justify-content:space-between;
+    padding-inline:7vw;
+    box-sizing: border-box;
 }
+.nav-bar ul li a.link-style {
+  text-decoration: none;
+  position: relative;
+}
+
+.nav-bar ul li a.link-style:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: #E6966A; /* Set your desired border color */
+  transition: width 0.3s;
+}
+
+.nav-bar ul li a.link-style:hover:after,
+.nav-bar ul li a.link-style:active:after,
+.nav-bar ul li a.link-style:focus:after {
+  width: 100%;
+}
+
 .nav-bar ul {
-    width:50vw;
     display: flex;
     align-items: center;
-    justify-content: right;
-    margin-left: 15rem;
-   
 }
 .logo-container{
     display:flex;
     align-items: center;
 }
-
+.logo-container > h3{
+    font-size: 1rem;
+}
 .linkStyle{
     color:black;
 }
@@ -68,28 +92,31 @@ ul li{
     height: 100vh;
     overflow-y: scroll;
 }
+section{
+    box-sizing: border-box;
+    padding-top: 5rem;
+}
 .home{
     display:flex;
     justify-content: space-between;
     align-items: center;
     height: 92vh;
     scroll-snap-align:start;
-    padding-top: 5rem;
+
     padding-left: 8rem;
     padding-right: 4rem;
 }
 .about{
     height: 100vh;
-    background-color: indianred;
     scroll-snap-align:start;
-    padding-top: 5rem;
+
     padding-right: 4rem;
     padding-left: 8rem;
-    
+    display: flex;
+    flex-direction: column;
 }
 .services{
     height: 100vh;
-    padding-top: 5rem;
     padding-left: 8rem;
     padding-right: 4rem;
     scroll-snap-align:start;
@@ -132,7 +159,7 @@ font-size: 3rem;
 }
 .adv-section{
     height: 100vh;
-    padding-top: 5rem;
+
     padding-right: 4rem;
     scroll-snap-align:start;
     display:flex;
@@ -146,10 +173,12 @@ font-size: 3rem;
 }
 
 .hscroll {
-    width: 100%;
+    width: 100vw;
+    box-sizing: border-box;
     overflow-x: scroll;
     display: flex;
     padding-left:10vw;
+    scrollbar-width: none;
 }
 .adv-title{
     padding-left: 10vw;
@@ -176,7 +205,7 @@ font-size: 3rem;
 }
 .accurate-section{
     height: 100vh;
-    padding-top: 5rem;
+
     padding-left: 8rem;
     padding-right: 4rem;
     scroll-snap-align:start;
@@ -189,6 +218,7 @@ font-size: 3rem;
     
 }
 .accurate-desc{
+    width: 66vw;
     margin-top: 2rem;
     margin-left: 2rem;
 }
@@ -202,5 +232,63 @@ font-size: 3rem;
 }
 .accurate-p{
     font-size: 1.3rem;
-    width: 70rem;
+    
+}
+.abt-item1{
+    display: flex;
+}
+.abt-item2{
+    display: flex;
+    margin-top: 2rem;
+}
+.abt-item-desc{
+    margin-left: 2rem;
+}
+
+.abt-item-desc > h2{
+    margin-top: 0;
+}
+.abt-item-desc > p{
+    width: 30rem;
+}
+.about > h2 {
+    font-size: 1rem;
+    align-self: center;
+    margin-block: 2rem 3rem;
+}
+footer{
+    width:100vw;
+    box-sizing:border-box;
+    background-color:#E6966A;
+    height: 3rem;
+    scroll-snap-align:end;
+    display: flex;
+    font-size: .8rem;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+main{
+    max-width: 100vw;
+    overflow-x: clip;
+}
+.grocery-img{
+    background: url("./assets/grocery.svg");
+    width: 30vw;
+    background-repeat: no-repeat;
+}
+.about-img{
+    
+    width: 30vw;
+    height: 30vh;
+    background-repeat: no-repeat;
+}
+.abt-img1{
+    background: url("./assets/abtimg1.svg");
+}
+.abt-img2{
+    background: url("./assets/abtimg2.svg");
+}
+.abt-item-desc{
+    width: 50vw;
 }

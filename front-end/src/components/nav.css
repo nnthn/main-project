@@ -1,0 +1,81 @@
+.nav-bar{
+    position:fixed;
+    top:0;
+    right:0;
+    height:5rem;
+    display:flex;
+    font-size:.7rem;
+    width:100vw;
+    background-color: white;
+    border-bottom: 0.1rem solid #E5E8EB;
+    justify-content:space-between;
+    padding-inline:7vw;
+    box-sizing: border-box;
+}
+.nav-bar ul li a.link-style {
+  text-decoration: none;
+  position: relative;
+}
+
+.nav-bar ul li a.link-style:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: #E6966A; /* Set your desired border color */
+  transition: width 0.3s;
+}
+
+.nav-bar ul li a.link-style:hover:after,
+.nav-bar ul li a.link-style:active:after,
+.nav-bar ul li a.link-style:focus:after {
+  width: 100%;
+}
+
+.nav-bar ul {
+    display: flex;
+    align-items: center;
+}
+.logo-container{
+    display:flex;
+    align-items: center;
+}
+.logo-container > h3{
+    font-size: 1rem;
+}
+.linkStyle{
+    color:black;
+}
+ul li{
+    display:flex;
+    align-items: center;
+    margin-left:2rem;
+    font-weight:600;
+    font-size:1rem;
+    height:3rem;
+}
+.logo-container >img{
+    width:2rem;
+    margin-right:1rem;
+}
+
+.signinbutton{
+    margin-left:.2rem;
+    background-color:#E6966A;
+    color:white;
+    height: 2.2rem;
+    width: 4.2rem;
+    border-radius: .5rem;
+    font-weight: 600;
+}
+.loginbutton{
+    background-color: #E5E8EB;
+    height: 2.2rem;
+    width: 4.2rem;
+    border-radius: .5rem;
+    font-weight: 600;
+}
+.link-style{
+    color:black;
+    text-decoration: none;
+}

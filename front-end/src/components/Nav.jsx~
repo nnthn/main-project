@@ -1,0 +1,19 @@
+
+
+export default function Nav(){
+    return (
+        <nav className="nav-bar">
+	  <div className="logo-container">
+	    <img src={logo} alt="logo"/>
+	    <h3>RetailDemandForecasting</h3>
+	  </div>
+	  <ul>
+	    <li><a className="link-style" href="#home">Home</a></li>
+	    <li><a className="link-style" href="#services">Our Services</a></li>
+	    <li><a className="link-style" href="#about">About</a></li>
+            <li><button className="loginbutton">Login</button></li>
+            <li><button className="signinbutton">Signin</button></li>
+	  </ul>
+	</nav>
+    );
+}
