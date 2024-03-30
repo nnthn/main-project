@@ -1,0 +1,17 @@
+.recent-card{
+    display: flex;
+    background-color: white;
+    height: 2rem;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 0.8rem;
+    margin-top: .5rem;
+    margin-left: .5rem;
+}
+.recent-card > h4{
+    flex: 1;
+}
+.name-container{
+    flex: 2;
+    display: flex;
+}

@@ -1,0 +1,13 @@
+.card-headings{
+    display: flex;
+    font-size: .8rem;
+    margin-left: 1.5rem;
+}
+.card-headings > .rest-title{
+    flex: 1;
+    font-weight: normal;
+}
+.card-headings > .heading-name{
+    flex: 2;
+    font-weight: normal;
+}

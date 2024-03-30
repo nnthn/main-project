@@ -17,20 +17,12 @@ export default function Nav(){
                 isLoggedIn: !prev.isLoggedIn
             };
         });
-    }
+    }	
     return (
+    <aside>
         <nav className="nav-bar">
-	  <div className="logo-container">
-	    <img src={logo} alt="logo"/>
-	    <h3>RetailDemandForecasting</h3>
-	  </div>
-	  <ul>
-	    <li><a className="link-style" href="#home">Home</a></li>
-	    <li><a className="link-style" href="#services">Our Services</a></li>
-	    <li><a className="link-style" href="#about">About</a></li>
-            {user.isLoggedIn ? <li><img src={userIcon} alt="usericon"/></li> : <li><button className="loginbutton">Login</button></li>}
-            {user.isLoggedIn ? <li onClick={toggleLogin}style={{margin : 0}}><h4  >{user.userName}</h4></li> : <li><button onClick={toggleLogin} className="signinbutton">Signin</button></li>}
-	  </ul>
-	</nav>
+	        <img src={logo} alt="logo"/>
+	    </nav>
+    </aside>
     );
 }
