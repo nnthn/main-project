@@ -3,15 +3,15 @@
     background-color: white;
     height: 2rem;
     align-items: center;
-    padding: 1rem;
+    padding: 1rem 1.5rem ;
     border-radius: 0.8rem;
     margin-top: .5rem;
     margin-left: .5rem;
+    justify-content: space-between;
+    
 }
-.recent-card > h4{
+.date{
     flex: 1;
-}
-.name-container{
-    flex: 2;
-    display: flex;
+    font-weight: normal;
+    margin-right: ;
 }

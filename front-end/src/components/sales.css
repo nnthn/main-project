@@ -1,13 +1,29 @@
+.sales{
+    heigth:55%;
+}
 .card-headings{
     display: flex;
+    margin-top: 2rem;
     font-size: .8rem;
-    margin-left: 1.5rem;
+    justify-content: space-between;
+    padding: 0 1.5rem 0 2rem;
 }
-.card-headings > .rest-title{
+.customer-id , date-title{
     flex: 1;
+}
+.customerid{
+    flex: 1;
+}
+.customer-id{
+    padding-right: 2rem;
+}
+.card-headings >h4{
     font-weight: normal;
 }
-.card-headings > .heading-name{
-    flex: 2;
-    font-weight: normal;
+.list-container{
+    overflow-y: scroll;
+    box-sizing: border-box;
+    height: 80%;
+    margin-top: .5rem;
+    scrollbar-width:none;
 }

@@ -1,13 +1,44 @@
 aside{
-    width: 5vw;
-    height: 100vh;
+    width: 7vw;
+    height: 100%;
 }
 .nav-bar{
     width: inherit;
-    margin-top: 4rem;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    height: 75%;
+    flex-direction: column;
+    margin-top: 12rem;
 }
 .nav-bar > img{
     width: 2rem;
+}
+.logout-container{
+    display:flex;
+    justify-content: center;
+
+}
+
+.icon{
+    width: 3rem;
+    height: 3rem;
+    padding-bottom: 3rem;
+}
+.nav-icons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.nav-icons > ul{
+    list-style-type: none;
+    padding: 0;
+}
+.nonactive{
+    color: #D6EDF5;
+}
+.active{
+    color: #85C9E0;
+}
+a{
+    text-decoration: none;
 }

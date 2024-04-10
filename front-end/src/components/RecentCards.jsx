@@ -1,14 +1,10 @@
 import "./recentcard.css";
-export default function RecentCards(){
+export default function RecentCards(props){
     return (
         <div className="recent-card">
-          <div className="name-container">
-            <img  alt="user"/>
-            <h4>Name</h4>
-          </div>
-          <h4>date</h4>
-          <h4>stauts</h4>
-          <h4>amount</h4>
+          <h4 className="customerid">{props.customerId}</h4>
+          <h4 className="date">{props.date}</h4>
+          <h4>{props.amount}</h4>
         </div>
     );
 }

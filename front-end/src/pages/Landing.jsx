@@ -1,12 +1,12 @@
 import React from 'react';
-import "./index.css";
-import logo from "./assets/logo.svg";
-import homeImg from "./assets/homeImg.svg";
-import womenImg from "./assets/womenbuying.svg";
-import infoImg1 from "./assets/infoimg1.svg";
-import infoImg2 from "./assets/infoimg2.svg";
-import infoImg3 from "./assets/infoimg3.svg";
-import Nav from "./components/Nav.jsx";
+import "../index.css";
+import logo from "../assets/logo.svg";
+import homeImg from "../assets/homeImg.svg";
+import womenImg from "../assets/womenbuying.svg";
+import infoImg1 from "../assets/infoimg1.svg";
+import infoImg2 from "../assets/infoimg2.svg";
+import infoImg3 from "../assets/infoimg3.svg";
+import Nav from "../components/Nav.jsx";
 function Landing() {
     return (
 	<div className="body">

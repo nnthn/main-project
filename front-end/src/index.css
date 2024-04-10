@@ -2,99 +2,19 @@
   font-family: "Poppins", sans-serif;
   font-style: normal;
   margin: 0;
+
 }
 .body{
     font-size:1rem;
 }
-.nav-bar{
-    position:fixed;
-    top:0;
-    right:0;
-    height:5rem;
-    display:flex;
-    font-size:.7rem;
-    width:100vw;
-    background-color: white;
-    border-bottom: 0.1rem solid #E5E8EB;
-    justify-content:space-between;
-    padding-inline:7vw;
-    box-sizing: border-box;
-}
-.nav-bar ul li a.link-style {
-  text-decoration: none;
-  position: relative;
-}
-
-.nav-bar ul li a.link-style:after {
-  content: '';
-  display: block;
-  width: 0;
-  height: 2px;
-  background-color: #E6966A; /* Set your desired border color */
-  transition: width 0.3s;
-}
-
-.nav-bar ul li a.link-style:hover:after,
-.nav-bar ul li a.link-style:active:after,
-.nav-bar ul li a.link-style:focus:after {
-  width: 100%;
-}
-
-.nav-bar ul {
-    display: flex;
-    align-items: center;
-}
-.logo-container{
-    display:flex;
-    align-items: center;
-}
-.logo-container > h3{
-    font-size: 1rem;
-}
-.linkStyle{
-    color:black;
-}
-ul li{
-    display:flex;
-    align-items: center;
-    margin-left:2rem;
-    font-weight:600;
-    font-size:1rem;
-    height:3rem;
-}
-.logo-container >img{
-    width:2rem;
-    margin-right:1rem;
-}
-
-.signinbutton{
-    margin-left:.2rem;
-    background-color:#E6966A;
-    color:white;
-    height: 2.2rem;
-    width: 4.2rem;
-    border-radius: .5rem;
-    font-weight: 600;
-}
-.loginbutton{
-    background-color: #E5E8EB;
-    height: 2.2rem;
-    width: 4.2rem;
-    border-radius: .5rem;
-    font-weight: 600;
-}
-.link-style{
-    color:black;
-    text-decoration: none;
-}
 .content{
     scroll-snap-type: y mandatory;
-    height: 100vh;
     overflow-y: scroll;
+    height: 90vh;
+    scrollbar-width: none;
 }
 section{
     box-sizing: border-box;
-    padding-top: 5rem;
 }
 .home{
     display:flex;
@@ -107,7 +27,7 @@ section{
     padding-right: 4rem;
 }
 .about{
-    height: 100vh;
+    height: 100%;
     scroll-snap-align:start;
 
     padding-right: 4rem;
@@ -116,7 +36,7 @@ section{
     flex-direction: column;
 }
 .services{
-    height: 100vh;
+    height: 100%;
     padding-left: 8rem;
     padding-right: 4rem;
     scroll-snap-align:start;
@@ -158,7 +78,7 @@ font-size: 3rem;
     margin-bottom: 0;
 }
 .adv-section{
-    height: 100vh;
+    height: 100%;
 
     padding-right: 4rem;
     scroll-snap-align:start;
@@ -173,7 +93,7 @@ font-size: 3rem;
 }
 
 .hscroll {
-    width: 100vw;
+    width: 100%;
     box-sizing: border-box;
     overflow-x: scroll;
     display: flex;
@@ -204,7 +124,7 @@ font-size: 3rem;
     font-weight: 600;
 }
 .accurate-section{
-    height: 100vh;
+    height: 100%;
 
     padding-left: 8rem;
     padding-right: 4rem;
@@ -257,7 +177,7 @@ font-size: 3rem;
     margin-block: 2rem 3rem;
 }
 footer{
-    width:100vw;
+    width:100%;
     box-sizing:border-box;
     background-color:#E6966A;
     height: 3rem;
@@ -269,7 +189,7 @@ footer{
     align-items: center;
 }
 main{
-    max-width: 100vw;
+    max-width: 100%;
     overflow-x: clip;
 }
 .grocery-img{
