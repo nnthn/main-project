@@ -9,9 +9,7 @@ export default function NewSale(){
         {id:4, itemName:"Soap", h2Value:"33",h3Value:"34",h4Value:"4333"},
         {id:5, itemName:"Gum Gum no Mi", h2Value:"343",h3Value:"33",h4Value:"4333"}, {id:6, itemName:"Mira Mira No Mi", h2Value:"3",h3Value:"4",h4Value:"633"},
         {id:7, itemName:"Soap", h2Value:"33",h3Value:"34",h4Value:"4333"},
-        {id:8, itemName:"Gum Gum no Mi", h2Value:"343",h3Value:"33",h4Value:"4333"}, {id:9, itemName:"Mira Mira No Mi", h2Value:"3",h3Value:"4",h4Value:"633"},
-        {id:8, itemName:"Gum Gum no Mi", h2Value:"343",h3Value:"33",h4Value:"4333"}, {id:9, itemName:"Mira Mira No Mi", h2Value:"3",h3Value:"4",h4Value:"633"},
-        {id:8, itemName:"Gum Gum no Mi", h2Value:"343",h3Value:"33",h4Value:"4333"}, {id:9, itemName:"Mira Mira No Mi", h2Value:"3",h3Value:"4",h4Value:"633"},
+       
     ]);
    
     function totalCalculate(){

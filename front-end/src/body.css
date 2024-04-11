@@ -5,6 +5,9 @@
     width: 100vw;
     align-items: center;
 }
+.normal-weight{
+    font-weight: normal;
+}
 .hero{
     border-radius: 2rem;
 }
