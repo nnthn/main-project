@@ -4,8 +4,17 @@ import './sales.css';
 export default function Sales(){
     const [recentSales, setRecentSales] = useState([
         { id: 1, customerId: "123", date: "2024-04-10", amount: 100 },
+        { id: 2, customerId: "456", date: "2024-04-09", amount: 200 },  { id: 1, customerId: "123", date: "2024-04-10", amount: 100 },
+        { id: 2, customerId: "456", date: "2024-04-09", amount: 200 },  { id: 1, customerId: "123", date: "2024-04-10", amount: 100 },
+        { id: 2, customerId: "456", date: "2024-04-09", amount: 200 },  { id: 1, customerId: "123", date: "2024-04-10", amount: 100 },
+        { id: 2, customerId: "456", date: "2024-04-09", amount: 200 },  { id: 1, customerId: "123", date: "2024-04-10", amount: 100 },
+        { id: 2, customerId: "456", date: "2024-04-09", amount: 200 },  { id: 1, customerId: "123", date: "2024-04-10", amount: 100 },
+        { id: 2, customerId: "456", date: "2024-04-09", amount: 200 },  { id: 1, customerId: "123", date: "2024-04-10", amount: 100 },
+        { id: 2, customerId: "456", date: "2024-04-09", amount: 200 },  { id: 1, customerId: "123", date: "2024-04-10", amount: 100 },
+        { id: 2, customerId: "456", date: "2024-04-09", amount: 200 },  { id: 1, customerId: "123", date: "2024-04-10", amount: 100 },
         { id: 2, customerId: "456", date: "2024-04-09", amount: 200 },
-        { id: 3, customerId: "789", date: "2024-04-08", amount: 150 },
+       
+
     ]);
 
     useEffect(() => {
@@ -29,7 +38,7 @@ export default function Sales(){
 
     return(
         <div className="sales">
-          <h1 className="recent-sales">Recent Sales</h1>
+          <h1 className="recent-sales sub-heading">Recent Sales</h1>
           <div className="card-headings">
             <h4 className="customer-id">Customer Id</h4>
             <h4 className="date">Date</h4>

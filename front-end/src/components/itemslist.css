@@ -1,0 +1,28 @@
+.item-container{
+    display: flex;
+    padding: 1.5rem 2rem ;
+    justify-content: space-between;
+    border-bottom: .3rem solid #EEEEEE;
+}
+.item-name{
+    font-weight: normal;
+    flex: 3;
+}
+.item-h3,.h3{
+    flex: .4;
+    display: flex;
+    justify-content: flex-end;
+}
+.item-h2{
+    flex: 1;
+}
+.qty,.symbol{
+    display: flex;
+}
+.qty >h5{
+    font-weight: normal;
+    align-self: flex-end;
+}
+.nm-wght,.symbol{
+    font-weight: normal;
+}

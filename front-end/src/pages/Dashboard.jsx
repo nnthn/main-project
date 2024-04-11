@@ -8,7 +8,7 @@ export default function Dashboard(){
     return (
         <>
             <div className="dashboard-section">
-              <div className="sales-section">
+              <div className="hero-container">
                     <Search/>
                     <Statistics/>
                     <Sales/>

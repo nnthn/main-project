@@ -7,7 +7,7 @@ export default function Statistic(){
         {id:1,item:"Milk",unit:"333"},
         {id:1,item:"Gum Gum",unit:"323"},
         {id:1,item:"Mira Mira No mi",unit:"322"},
-    ])
+    ]);
     useEffect(()=>{
         const fetchSoldItems = async()=>{
             try{
@@ -30,21 +30,22 @@ export default function Statistic(){
     },[]);
     
     return(
-      <div className="sold-items">
-        <div className="pie-chart">
+        <div className="sold-items">
+          <h3 className="sub-heading">Items by sales</h3>
+          <div className="pie-chart">
+          </div>
+          <div className="items-heading">
+            <h4>Name</h4>
+            <h4>Units</h4>
+          </div>
+          {soldItems.map((items)=>(
+              <ItemsCard
+                key={items.id}
+                item={items.item}
+                unit={items.unit}
+              />
+          ))}
         </div>
-        <div className="items-heading">
-          <h4>Name</h4>
-          <h4>Units</h4>
-        </div>
-        {soldItems.map((items)=>(
-            <ItemsCard
-              key={items.id}
-              item={items.item}
-              unit={items.unit}
-            />
-        ))}
-      </div>
     );
 }
                     

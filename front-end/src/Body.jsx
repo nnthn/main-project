@@ -17,12 +17,14 @@ export default function Body(){
 	      <div className="body-container">
                 <BrowserRouter>
                   <Nav/>
+                  <div className="body-card">
                   <Routes>
                     <Route index element={<Home/>}/>
                     <Route path="/home" element={<Home/>}/>
                     <Route path="/newsale" element={<NewSale/>}/>
                     <Route path="/restock" element={<Restock/>}/>
                   </Routes>
+                  </div>
                 </BrowserRouter>
 	      </div>
             </>

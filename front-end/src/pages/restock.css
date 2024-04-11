@@ -1,0 +1,19 @@
+.restock{
+    display: flex;
+    flex: 1;
+    align-self: stretch;
+}
+.headings-container{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2rem 0 2rem;
+}
+.h1,.h2,.h3{
+    font-weight: normal;
+}
+.h1{
+    flex: 3;
+}
+.h2{
+    flex: 1;
+}

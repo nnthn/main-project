@@ -1,0 +1,29 @@
+
+.headings-container{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2rem 0 2rem;
+}
+.h1,.h2,.h3{
+    font-weight: normal;
+}
+.h1{
+    flex: 3;
+}
+.h2{
+    flex: 1;
+}
+.card-items-container{
+    height: 70vh;
+    overflow: hidden;
+}
+.items-list-container{
+    width: 100%;
+    height: 90%;
+    margin-top: .5rem;
+    border-radius:1.5rem;
+    background-color: white;
+    overflow-y: scroll;
+    box-sizing: border-box;
+    scrollbar-width: none;
+}
