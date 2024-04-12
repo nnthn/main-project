@@ -1,9 +1,12 @@
 import "./itemslist.css";
 
 export default function ItemsList(props){
+    const handleClick=()=>{
+        props.onItemClick(props);
+    };
     return (
         <>
-          <div className="item-container">
+          <div className="item-container" onClick={handleClick}>
             <h4 className="item-name">{props.itemName}</h4>
             <div className="item-h2 symbol">
               <h4>₹</h4>

@@ -17,3 +17,23 @@
 .h2{
     flex: 1;
 }
+.item-details{
+    margin-top: 1rem;
+}
+.item-detail{
+    margin-top: 1rem;
+}
+.title-and-desc{
+    margin-top: 2rem;
+}
+.restock-quantity{
+    font-size: 2rem;
+    font-weight: bold;
+    border: 0;
+    border-bottom-width: 0px;
+    border-bottom: .1rem solid;
+    min-width: 3rem;
+    background-color: transparent;
+    outline: none;
+    min-height:3rem;
+}

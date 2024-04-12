@@ -1,0 +1,23 @@
+.customer-card{
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 2rem;
+    height: 10rem;
+}
+.customer-card > img{
+    align-self: flex-end;
+}
+.customer-details{
+    margin-left: 2rem;
+}
+.customer-number{
+    font-size: 2rem;
+    border-bottom: .15rem solid;
+    font-weight: bold;
+    border:0;
+    border-bottom: .15rem solid;
+    max-width: 12rem;
+    background-color: transparent;
+    outline: none;
+}

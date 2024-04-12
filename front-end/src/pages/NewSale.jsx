@@ -7,16 +7,12 @@ import arrowimg from "../assets/arrow.svg";
 
 export default function NewSale(props){
     const [itemsInCart, setItemsInCart] = useState([
-        {id:1, itemName:"Soap", h2Value:"33",h3Value:"34"},
-        {id:2, itemName:"Gum Gum no Mi", h2Value:"343",h3Value:"33"},
-        {id:3, itemName:"Mira Mira No Mi", h2Value:"3",h3Value:"4"},
-        {id:4, itemName:"Soap", h2Value:"33",h3Value:"34"},
-        {id:5, itemName:"Gum Gum no Mi", h2Value:"343",h3Value:"33"},
-        
-       
-
-
-    ]);
+        {id:1, itemName:"Soap", h2Value:"30",h3Value:"34"},
+        {id:2, itemName:"Pencil", h2Value:"3",h3Value:"33"},
+        {id:3, itemName:"Pen", h2Value:"3",h3Value:"40"},
+        {id:4, itemName:"Chocolate", h2Value:"20",h3Value:"70"},
+        {id:5, itemName:"Cup", h2Value:"30",h3Value:"33"},
+     ]);
      function totalCalculate(){
         let total=0;
          itemsInCart.map((item)=>{
@@ -25,7 +21,6 @@ export default function NewSale(props){
         });
         return total;
     }
-    console.log(totalCalculate());
     return (
         <>
           <section id="newsale" className="newsale">

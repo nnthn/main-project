@@ -1,6 +1,8 @@
 .sold-items{
-    width: 25%;
-    margin-left: 4rem;
+    flex: 1;
+    margin: 3rem 5rem;
+    display: flex;
+    flex-direction: column;
 }
 .items-heading{
     display: flex;

@@ -1,0 +1,21 @@
+.payment-methods{
+    background-color: white;
+    border-radius: 2rem;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.p-4{
+    display: flex;
+    font-weight: normal;
+    padding: 1.5rem 0 1.5rem 4rem;
+    font-size: 1rem;
+    border: 0;
+    border-bottom: .2rem solid #EEEEEE;
+    background-color: white;
+    cursor: pointer;
+}
+.p-4:hover{
+    background-color:#EEFFFF;
+}

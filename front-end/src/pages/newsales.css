@@ -41,6 +41,7 @@
     padding-left:2rem;
     box-shadow: 5px 5px  #00000025;
     flex: 1;
+    min-width: 3rem;
 }
 .total{
     font-weight: 600;
