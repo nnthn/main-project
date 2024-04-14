@@ -1,6 +1,7 @@
 import "./restock.css";
 import arrowimg from "../assets/arrow.svg";
 import ItemsList from "../components/ItemsList.jsx";
+import Search from "../components/Search.jsx";
 import React, {useState, useEffect } from "react";
 
 export default function NewSale(){
@@ -30,7 +31,7 @@ export default function NewSale(){
           <section id="restock" className="restock">
             <div className='hero-container'>
               <h1 className="main-heading">Restock</h1>
-              <h3>search component</h3>
+              <Search placeholder="Search items in inventory"/>
                <div className="card-items-container">
                  <h2 className="sub-heading">Inventory</h2>
                  <div className='headings-container'>
@@ -41,7 +42,8 @@ export default function NewSale(){
                  </div>
                  <div className="items-list-container">
                    {itemsInInventory.map((item)=>(
-                       <ItemsList
+                       <a className="items-a-tag">
+                         <ItemsList
                          itemName={item.itemName}
                          h2Value={item.h2Value}
                          h3Value={item.h3Value}
@@ -49,7 +51,8 @@ export default function NewSale(){
                          h4ClassName="nm-wght"
                          h4Value={item.h4Value}
                          onItemClick={handleItemClick}
-                       />
+                          />
+                      </a>
                        
                        
                    ))}
@@ -85,9 +88,9 @@ export default function NewSale(){
                     <h3 className="sub-heading restock-quantity">{selectedItem && (
                         <h3 className="restock-quantity" contentEditable="true" onBlur={handleQuantityChange}>{selectedItem.h4Value}</h3>)}</h3>
                   </div>
-                  <div className="total-submit">
+                  <button className="total-submit">
                     <img src={arrowimg}alt="arrow"/>
-                  </div>
+                  </button>
                 </div>
               </div>
             </div>

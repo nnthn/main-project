@@ -2,6 +2,7 @@ import './newsales.css';
 import ItemsList from "../components/ItemsList.jsx";
 import CustomerCard from "../components/CustomerCard.jsx";
 import PaymentMethod from "../components/PaymentMethod.jsx";
+import Search from "../components/Search.jsx";
 import React ,{useState,useEffect} from "react" ;
 import arrowimg from "../assets/arrow.svg";
 
@@ -26,7 +27,7 @@ export default function NewSale(props){
           <section id="newsale" className="newsale">
             <div className='hero-container'>
               <h1 className="main-heading">New Sales</h1>
-              <h3>search component</h3>
+              <Search placeholder="Search and Add Items to Cart"/>
                <div className="card-items-container">
                  <h2 className="sub-heading">Items In Cart</h2>
                  <div className='headings-container'>
@@ -43,7 +44,7 @@ export default function NewSale(props){
                          h3Value={item.h3Value}
                          h4Symbol="$"
                          h4ClassName="bold"
-                         h4Value={item.h4Value}
+                         h4Value={item.h3Value * item.h2Value}
                        /> 
                        
                    ))}
@@ -60,9 +61,9 @@ export default function NewSale(props){
                     <h3 className="symbol sub-heading">₹</h3>
                     <h3 className="sub-heading total">{totalCalculate()}</h3>
                   </div>
-                  <div className="total-submit">
+                  <button className="total-submit">
                     <img src={arrowimg}alt="arrow"/>
-                  </div>
+                  </button>
                 </div>
               </div>
             </div>

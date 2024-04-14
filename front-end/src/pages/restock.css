@@ -3,6 +3,9 @@
     flex: 1;
     align-self: stretch;
 }
+.card-items-container{
+    margin-top: 1rem;
+}
 .headings-container{
     display: flex;
     justify-content: space-between;
@@ -36,4 +39,7 @@
     background-color: transparent;
     outline: none;
     min-height:3rem;
+}
+.items-a-tag{
+    cursor: pointer;
 }

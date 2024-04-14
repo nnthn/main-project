@@ -9,7 +9,7 @@ export default function Dashboard(){
         <>
             <div className="dashboard-section">
               <div className="hero-container">
-                    <Search/>
+                    <Search placeholder="Search for Recent Sales"/>
                     <Statistics/>
                     <Sales/>
                 </div>

@@ -43,20 +43,6 @@ export default function Nav() {
                             </Link>
                         </li>
                     </ul>
-                    <ul>
-                        <li className={activeSection === 'settings' ? 'active' : 'nonactive'}>
-                            <Link to="/settings" style={{ textDecoration: 'none', color: 'inherit' }}>
-                                <svg className="icon">
-                                    <use xlinkHref={`${sprite}#settings`} />
-                                </svg>
-                            </Link>
-                        </li>
-                    </ul>
-                </div>
-                <div className="nonactive logout-container">
-                    <svg className="icon">
-                        <use xlinkHref={`${sprite}#logout`} />
-                    </svg>
                 </div>
             </nav>
         </aside>
