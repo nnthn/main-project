@@ -7,27 +7,47 @@ import React ,{useState,useEffect} from "react" ;
 import arrowimg from "../assets/arrow.svg";
 
 export default function NewSale(props){
-    const [itemsInCart, setItemsInCart] = useState([
-        {id:1, itemName:"Soap", h2Value:"30",h3Value:"34"},
-        {id:2, itemName:"Pencil", h2Value:"3",h3Value:"33"},
-        {id:3, itemName:"Pen", h2Value:"3",h3Value:"40"},
-        {id:4, itemName:"Chocolate", h2Value:"20",h3Value:"70"},
-        {id:5, itemName:"Cup", h2Value:"30",h3Value:"33"},
-     ]);
+    const [customerId,setCustomerId] =useState();
+    const [itemsInCart, setItemsInCart] = useState([]);
      function totalCalculate(){
         let total=0;
          itemsInCart.map((item)=>{
-             item.h4Value= parseInt(item.h2Value)*parseInt(item.h3Value);
+             item.h4Value= parseInt(item.price)*parseInt(item.inventory);
             total=total+ item.h4Value;
         });
         return total;
-    }
+     }
+    const handleSubmitSale = async () => {
+        try {
+            const response = await fetch('/sales', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    customerId: customerId,
+                    items: itemsInCart.map(item => [item[0], item[1].quantity])
+                })
+            });
+
+            if (response.ok) {
+                console.log('Sale submitted successfully');
+                // Optionally, you can reset the form or perform other actions after successful submission
+            } else {
+                console.error('Failed to submit sale');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    };
+
+
     return (
         <>
           <section id="newsale" className="newsale">
             <div className='hero-container'>
               <h1 className="main-heading">New Sales</h1>
-              <Search placeholder="Search and Add Items to Cart"/>
+              <Search setSelectedItems={setItemsInCart} selectedItems={itemsInCart}/>
                <div className="card-items-container">
                  <h2 className="sub-heading">Items In Cart</h2>
                  <div className='headings-container'>
@@ -39,12 +59,12 @@ export default function NewSale(props){
                  <div className="items-list-container">
                    {itemsInCart.map((item)=>(
                        <ItemsList
-                         itemName={item.itemName}
-                         h2Value={item.h2Value}
-                         h3Value={item.h3Value}
+                         itemName={item[1].name}
+                         h2Value={item[1].price}
+                         h3Value={item[1].inventory}
                          h4Symbol="$"
                          h4ClassName="bold"
-                         h4Value={item.h3Value * item.h2Value}
+                         h4Value={item[1].price * item[1].inventory}
                        /> 
                        
                    ))}
@@ -52,12 +72,12 @@ export default function NewSale(props){
                </div>
             </div>
             <div className="sub-section">
-              <CustomerCard />
+              <CustomerCard setCustomerId={setCustomerId}/>
               <PaymentMethod />
-              <div className="total-container">
+              <div className="total-container" >
                 <h4 className="sub-heading">Total Amount</h4>
                 <div className='amount-container'>
-                  <div className="total-card">
+                  <div className="total-card" onClick={handleSubmitSale}>
                     <h3 className="symbol sub-heading">₹</h3>
                     <h3 className="sub-heading total">{totalCalculate()}</h3>
                   </div>

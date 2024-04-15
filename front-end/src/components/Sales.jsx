@@ -1,4 +1,5 @@
 import RecentCards from "./RecentCards.jsx";
+import BASE_URL from "../config.jsx";
 import React, {useState, useEffect} from 'react';
 import './sales.css';
 export default function Sales(){
@@ -20,7 +21,7 @@ export default function Sales(){
     useEffect(() => {
         const fetchRecentSales = async () => {
             try {
-                const response = await fetch("/sales", {
+                const response = await fetch(`${BASE_URL}/sales`, {
                     // You can add any additional configurations
                 });
                 if (!response.ok) {

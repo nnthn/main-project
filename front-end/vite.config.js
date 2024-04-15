@@ -6,7 +6,7 @@ export default defineConfig({
     plugins: [react()],
     base:"main-project",
     server:{
-	host: '192.168.1.6',
+	host: '0.0.0.0',
 	port:3000,
     }
 })

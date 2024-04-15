@@ -43,3 +43,10 @@
 .items-a-tag{
     cursor: pointer;
 }
+.inventory-heading{
+    display: flex;
+    justify-content: space-between;
+}
+.inventroy-heading > button{
+    height: ;
+}

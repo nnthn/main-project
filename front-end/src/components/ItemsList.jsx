@@ -2,7 +2,7 @@ import "./itemslist.css";
 
 export default function ItemsList(props){
     const handleClick=()=>{
-        props.onItemClick(props);
+        props.onItemClick();
     };
     return (
         <>

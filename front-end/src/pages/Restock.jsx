@@ -5,35 +5,73 @@ import Search from "../components/Search.jsx";
 import React, {useState, useEffect } from "react";
 
 export default function NewSale(){
+    const [newItem,setNewItem] =useState(true);
     const [selectedItem, setSelectedItem] = useState(null);
-    const [itemsInInventory, setItemsInInventory] = useState([
-        {id:1, itemName:"Soap", h2Value:"33",h3Value:"34",h4Value:"4333"},
-        {id:2, itemName:"Gum Gum no Mi", h2Value:"343",h3Value:"33",h4Value:"4333"}, {id:3, itemName:"Mira Mira No Mi", h2Value:"3",h3Value:"4",h4Value:"633"},
-        {id:4, itemName:"Soap", h2Value:"33",h3Value:"34",h4Value:"4333"},
-        {id:5, itemName:"Gum Gum no Mi", h2Value:"343",h3Value:"33",h4Value:"4333"}, {id:6, itemName:"Mira Mira No Mi", h2Value:"3",h3Value:"4",h4Value:"633"},
-        {id:7, itemName:"Soap", h2Value:"33",h3Value:"34",h4Value:"4333"},
-       
-    ]);
+    const [itemsInInventory, setItemsInInventory] = useState([]);
+    const [restockQuantity, setRestockQuantity] = useState(selectedItem ? selectedItem.quantity : '');
    
     const handleItemClick =(item) =>{
         setSelectedItem(item);
+        setNewItem(false);
     };
-    const handleQuantityChange= (event)=>{
-        const newValue = event.target.textContent;
-        setSelectedItem({
-            ...selectedItem,
-            h4Value: newValue
-        });
+
+    const handleChange = (e) => {
+        setRestockQuantity(e.target.value);
     };
+    useEffect(() => {
+
+        if (selectedItem) {
+            setRestockQuantity(selectedItem.quantity);
+        }
+        const fetchItems = async () => {
+            try {
+                const response = await fetch('/items');
+                if (response.ok) {
+                    const data = await response.json();
+                    setItemsInInventory(data);
+                } else {
+                    console.error('Failed to fetch items');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        };
+
+        fetchItems();
+    }, [selectedItem]);
+    const updateItemQuantity = async (itemId, quantity) => {
+        if (!selectedItem ) return;
+        try {
+            const response = await fetch(`/items/${itemId}`, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(quantity)
+            });
+
+            if (response.ok) {
+                console.log(`Item ${itemId} quantity updated successfully`);
+            } else {
+                console.error(`Failed to update quantity for item ${itemId}`);
+            }
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    };
+
    
     return (
         <>
           <section id="restock" className="restock">
             <div className='hero-container'>
               <h1 className="main-heading">Restock</h1>
-              <Search placeholder="Search items in inventory"/>
+
                <div className="card-items-container">
-                 <h2 className="sub-heading">Inventory</h2>
+                 <div className="inventory-heading ">
+                   <h2 className="sub-heading">Inventory</h2>
+                   <button onClick={()=>setNewItem(!newItem)}>add</button>
+                 </div>
                  <div className='headings-container'>
                    <h4 className="h1">Name</h4>
                    <h4 className="h2">Rate</h4>
@@ -44,25 +82,28 @@ export default function NewSale(){
                    {itemsInInventory.map((item)=>(
                        <a className="items-a-tag">
                          <ItemsList
-                         itemName={item.itemName}
-                         h2Value={item.h2Value}
-                         h3Value={item.h3Value}
-                         h4Symbol="+"
-                         h4ClassName="nm-wght"
-                         h4Value={item.h4Value}
-                         onItemClick={handleItemClick}
+                           itemName={item[1].name}
+                           h2Value={item[1].price}
+                           h3Value={item[1].inventory}
+                           h4Symbol="+"
+                           h4ClassName="nm-wght"
+                           h4Value={item.h4Value}
+                           onItemClick={()=> handleItemClick(item)}
                           />
                       </a>
                        
                        
                    ))}
+                   
                  </div>
                </div>
             </div>
             <div className="sub-section">
               <div>
                 <h2 className="sub-heading">Item Details</h2>
-                   {selectedItem && (
+                {newItem ?
+                 <ProductForm />
+                 : selectedItem && (
                       <div className="item-detail">
                         <div className="title-and-desc">
                           <h3 className="normal-weight">Produck Name :</h3>
@@ -80,21 +121,135 @@ export default function NewSale(){
                       </div>
 
                   )}
-               </div>
-              <div className="total-container">
-                <h4 className="sub-heading">Restock Quantity</h4>
-                <div className='amount-container'>
-                  <div className="total-card">
-                    <h3 className="sub-heading restock-quantity">{selectedItem && (
-                        <h3 className="restock-quantity" contentEditable="true" onBlur={handleQuantityChange}>{selectedItem.h4Value}</h3>)}</h3>
-                  </div>
-                  <button className="total-submit">
-                    <img src={arrowimg}alt="arrow"/>
-                  </button>
-                </div>
               </div>
+              {
+                  !newItem && (
+                      <div className="total-container">
+                        <h4 className="sub-heading">Restock Quantity</h4>
+                        {selectedItem &&(
+                            <div className='amount-container'>
+                          <div className="total-card" onClick={updateItemQuantity(selectedItem[0],restockQuantity)}>
+
+                            <h3 className="sub-heading restock-quantity">{ selectedItem && (
+                                <input value={restockQuantity} type="text" onChange={handleChange}>{restockQuantity}</input>)}</h3>
+                          </div>
+                          <button className="total-submit" >
+                            <img src={arrowimg}alt="arrow"/>
+                          </button>
+                        </div>
+                        )}
+                      </div>
+                  )
+              }
             </div>
           </section>
         </>
     );
 }
+
+
+
+function ProductForm(){
+  const [formData, setFormData] = useState({
+    name: '',
+    inventory: 0,
+    quantity: '',
+    price: 0
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    try {
+      const response = await fetch('/items', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          inventory: formData.inventory,
+          qtyType: formData.quantity,
+          price: formData.price
+        })
+      });
+
+      if (response.ok) {
+        console.log('Product added successfully');
+        // Optionally, you can reset the form after successful submission
+        setFormData({
+          name: '',
+          inventory: 0,
+          quantity: '',
+          price: 0
+        });
+      } else {
+        console.error('Failed to add product');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label htmlFor="name">Name:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+          required
+        />
+      </div>
+      <div>
+        <label htmlFor="inventory">Inventory:</label>
+        <input
+          type="number"
+          id="inventory"
+          name="inventory"
+          value={formData.inventory}
+          onChange={handleChange}
+          required
+        />
+      </div>
+      <div>
+        <label htmlFor="quantity">Quantity Type:</label>
+        <select
+          id="quantity"
+          name="quantity"
+          value={formData.quantity}
+          onChange={handleChange}
+          required
+        >
+          <option value="">Select quantity</option>
+          <option value="1">nos</option>
+          <option value="2">kg</option>
+          <option value="3">l</option>
+          {/* Add more options as needed */}
+        </select>
+      </div>
+      <div>
+        <label htmlFor="price">Price:</label>
+        <input
+          type="number"
+          id="price"
+          name="price"
+          value={formData.price}
+          onChange={handleChange}
+          required
+        />
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  );
+};
+
+

@@ -1,36 +1,99 @@
 // Search.jsx
-import React, { useState } from "react";
+
 import "./search.css";
 import searchImg from "../assets/search.svg";
 
-export default function Search(props) {
-  const [searchQuery, setSearchQuery] = useState("");
+import React, { useState, useEffect } from 'react';
 
-  const handleChange = (event) => {
-    setSearchQuery(event.target.value);
-      // You can add additional logic here if needed, such as debouncing or throttling
-      console.log(searchQuery);
+const SearchComponent = ({setSelectedItems,selectedItems}) => {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [searchResults, setSearchResults] = useState([]);
+  const [showPopup, setShowPopup] = useState(false);
+  
+
+  useEffect(() => {
+    if (searchTerm.trim() === '') {
+      setSearchResults([]);
+      setShowPopup(false);
+      return;
+    }
+
+    // Perform your GET request to fetch search results
+    const fetchSearchResults = async () => {
+      try {
+        const response = await fetch(`your-api-endpoint?q=${searchTerm}`);
+        if (response.ok) {
+          const data = await response.json();
+          setSearchResults(data);
+          setShowPopup(true);
+        } else {
+          console.error('Failed to fetch search results');
+        }
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    };
+
+    fetchSearchResults();
+  }, [searchTerm]);
+
+  const handleInputChange = (e) => {
+    setSearchTerm(e.target.value);
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Send the searchQuery to the backend API for search
-    console.log("Search query:", searchQuery);
-    // You can make the API call here using fetch or Axios
+  const handleItemClick = (item) => {
+    // Handle item selection
+    console.log('Selected item:', item);
+    setSelectedItems([...selectedItems, item]);
+    setSearchTerm('');
+    setShowPopup(false);
   };
 
   return (
-    <form className="search-form" onSubmit={handleSubmit}>
+    <div>
       <input
         type="text"
-        placeholder={props.placeholder}
-        value={searchQuery}
-        onChange={handleChange}
-        className="search-input"
+        placeholder="Search..."
+        value={searchTerm}
+        onChange={handleInputChange}
       />
-      <button type="submit" className="search-button">
-        <img src={searchImg} alt="Search" className="search-icon" />
-      </button>
-    </form>
+      {showPopup && (
+        <div style={{ position: 'relative' }}>
+          <div
+            style={{
+              position: 'absolute',
+              top: '100%',
+              left: 0,
+              width: '100%',
+              backgroundColor: 'white',
+              border: '1px solid #ccc',
+              borderRadius: '4px',
+              boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+              zIndex: 999
+            }}
+          >
+            {searchResults.map((result) => (
+              <div
+                key={result.id}
+                style={{ padding: '8px', cursor: 'pointer' }}
+                onClick={() => handleItemClick(result)}
+              >
+                {result.name}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+      <div>
+
+        <ul>
+          {selectedItems.map((item, index) => (
+            <li key={index}>{item.name}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
   );
-}
+};
+
+export default SearchComponent;
