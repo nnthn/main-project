@@ -46,7 +46,49 @@
 .inventory-heading{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
-.inventroy-heading > button{
-    height: ;
+
+.label-input{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+.item-submit-button,.delete-button{
+    margin-top: 1rem;
+    height: 3rem;
+    width: 3rem;
+    display: flex;
+    justify-content: center;
+    border: none;
+    border-radius: .2rem;
+    padding: .2rem;
+    
+}
+.delete-button{
+    width: fit-content;
+    height: fit-content;
+    align-items: center;
+}
+.delete-button > img{
+    width: 2rem;
+    height: 2rem;
+    
+}
+.addbtn > img{
+    width: 2rem;
+    height: 2rem;
+    margin-right: .5rem;
+}
+.addbtn{
+    width: fit-content;
+    height: fit-content;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    outline: none;
+    border: none;
+    font-weight: bold;
+    padding: .5rem;
+    border-radius: 3rem;
 }

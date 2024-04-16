@@ -1,37 +1,58 @@
 import './newsales.css';
-import ItemsList from "../components/ItemsList.jsx";
+import SalesList from "../components/SalesList.jsx";
 import CustomerCard from "../components/CustomerCard.jsx";
 import PaymentMethod from "../components/PaymentMethod.jsx";
 import Search from "../components/Search.jsx";
 import React ,{useState,useEffect} from "react" ;
 import arrowimg from "../assets/arrow.svg";
-
+import baseUrl from '../config.jsx';
 export default function NewSale(props){
     const [customerId,setCustomerId] =useState();
     const [itemsInCart, setItemsInCart] = useState([]);
-     function totalCalculate(){
-        let total=0;
-         itemsInCart.map((item)=>{
-             item.h4Value= parseInt(item.price)*parseInt(item.inventory);
-            total=total+ item.h4Value;
+    const [totalAmnt, setTotalAmount] = useState(0); // Initialize total amount state
+
+    // Function to calculate total amount
+    function totalCalculate(){
+        let total = 0;
+        itemsInCart.forEach((item) => {
+            const itemTotal = parseInt(item[1].itemPrice) * parseInt(item.quantity);
+            total += itemTotal;
         });
         return total;
-     }
+    }
+
+    // Function to handle quantity change
+    function handleChange(item){
+        console.log(item);
+        let x = [...itemsInCart];
+        x[item.index].quantity = item.quantity;
+        setItemsInCart(x);
+    }
+
+    // Update total amount state when items in cart change
+    useEffect(() => {
+        setTotalAmount(totalCalculate());
+    }, [itemsInCart]);
+
+    // Function to handle sale submission
     const handleSubmitSale = async () => {
+        console.log(itemsInCart);
         try {
-            const response = await fetch('/sales', {
+            const response = await fetch(`${baseUrl}/sales`,{
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    customerId: customerId,
-                    items: itemsInCart.map(item => [item[0], item[1].quantity])
+                    phoneNumber: customerId,
+                    items: itemsInCart.map(item => [item[0], item.quantity]),
+                    totalAmount: totalAmnt // Use the totalAmnt state here
                 })
             });
 
             if (response.ok) {
                 console.log('Sale submitted successfully');
+                setItemsInCart([]);
                 // Optionally, you can reset the form or perform other actions after successful submission
             } else {
                 console.error('Failed to submit sale');
@@ -40,8 +61,6 @@ export default function NewSale(props){
             console.error('Error:', error);
         }
     };
-
-
     return (
         <>
           <section id="newsale" className="newsale">
@@ -57,14 +76,18 @@ export default function NewSale(props){
                    <h4 className="h3">Total</h4>
                  </div>
                  <div className="items-list-container">
-                   {itemsInCart.map((item)=>(
-                       <ItemsList
-                         itemName={item[1].name}
-                         h2Value={item[1].price}
-                         h3Value={item[1].inventory}
+                   {itemsInCart.map((item, index)=>(
+                       <SalesList
+                         key ={index}
+                         index={index}
+                         itemName={item[1].itemName}
+                         itemPrice={item[1].itemPrice}
+                         itemInventory={item[1].itemInventory}
                          h4Symbol="$"
                          h4ClassName="bold"
-                         h4Value={item[1].price * item[1].inventory}
+                         h4Value={item[1].itemPrice * item.quantity}
+                         quantity={1}
+                         changeQty={handleChange}
                        /> 
                        
                    ))}
@@ -76,8 +99,8 @@ export default function NewSale(props){
               <PaymentMethod />
               <div className="total-container" >
                 <h4 className="sub-heading">Total Amount</h4>
-                <div className='amount-container'>
-                  <div className="total-card" onClick={handleSubmitSale}>
+                <div className='amount-container' onClick={handleSubmitSale}>
+                  <div className="total-card" >
                     <h3 className="symbol sub-heading">₹</h3>
                     <h3 className="sub-heading total">{totalCalculate()}</h3>
                   </div>

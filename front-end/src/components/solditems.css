@@ -12,3 +12,6 @@
 .items-heading > h4{
     font-weight: normal;
 }
+.item-list-container{
+    overflow-y: scroll;
+}
