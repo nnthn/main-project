@@ -27,17 +27,31 @@ export default function Statistic() {
         return <div>Loading...</div>;
     }
 
-    const quantityData = salesData[0].map(data => ({ time: new Date(data[0]).toLocaleString(), value: data[1] }));
-    const forecastData = salesData[1].map(data => ({ time: new Date(data[0]).toLocaleString(), value: data[1] }));
+    // Extract previous sales data
+    const previousSales = salesData[0].map(data => ({
+        time: new Date(data[0]).toLocaleString(),
+        value: data[1],
+        type: 'Previous Sales'
+    }));
+
+    // Extract future forecast data
+    const futureForecast = salesData[1].map(data => ({
+        time: new Date(data[0]).toLocaleString(),
+        value: data[1],
+        type: 'Future Forecast'
+    }));
+
+    // Combine both previous sales and future forecast data into one array
+    const combinedData = [...previousSales, ...futureForecast];
 
     return (
-        <AreaChart width={800} height={400} data={quantityData}>
+        <AreaChart width={800} height={400} data={previousSales}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="time" />
             <YAxis />
             <Tooltip />
             <Legend />
-            <Area type="monotone" dataKey="value" name="Quantity" stroke="#8884d8" fill="#8884d8" />
+            <Area type="monotone" dataKey="value" name="Sales" stroke="#8884d8" fill="#8884d8" />
             <Area type="monotone" dataKey="value" name="Forecast" stroke="#82ca9d" fill="#82ca9d" />
         </AreaChart>
     );
