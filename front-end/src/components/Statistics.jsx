@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 import axios from 'axios';
+import "./statistics.css";
 import baseUrl from '../config.jsx';
 
 export default function Statistic() {
@@ -45,14 +46,28 @@ export default function Statistic() {
     const combinedData = [...previousSales, ...futureForecast];
 
     return (
-        <AreaChart width={800} height={400} data={previousSales}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="time" />
-            <YAxis />
-            <Tooltip />
-            <Legend />
-            <Area type="monotone" dataKey="value" name="Sales" stroke="#8884d8" fill="#8884d8" />
-            <Area type="monotone" dataKey="value" name="Forecast" stroke="#82ca9d" fill="#82ca9d" />
-        </AreaChart>
+        <div>
+          <h3 className="sub-heading">Statistics</h3>
+          <div className="forecast-graph">
+            
+            <AreaChart width={400} height={400} data={previousSales}>
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="time" />
+              <YAxis />
+              <Tooltip />
+              <Legend />
+              <Area type="monotone" dataKey="value" name="Sales" stroke="#8884d8" fill="#8884d8" />
+            </AreaChart>
+            <AreaChart width={400} height={400} data={futureForecast}>
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="time" />
+              <YAxis />
+              <Tooltip />
+              <Legend />
+              <Area type="monotone" dataKey="value" name="future" stroke="#72BD6F" fill="#72BD6F" />
+            </AreaChart>
+
+          </div>
+        </div>
     );
 };

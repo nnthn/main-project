@@ -8,3 +8,11 @@
     background-color: white;
     border-radius: .5rem;
 }
+.forecast-graph{
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 1rem;
+}

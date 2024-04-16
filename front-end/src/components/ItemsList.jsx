@@ -38,7 +38,7 @@ export default function ItemsList(props){
             </div>
             <div className="item-h2 qty">
               <h4>{props.itemInventory}</h4>
-              <h5>nos</h5>
+              <h5>  {props.itemType}</h5>
             </div>
             <div className="item-h3 symbol">
               <h4 className="symbol">{props.h4Symbol}</h4>
