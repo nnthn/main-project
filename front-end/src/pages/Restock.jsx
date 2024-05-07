@@ -116,7 +116,7 @@ export default function NewSale(){
                            itemName={item[1].itemName}
                            itemPrice={item[1].itemPrice}
                            itemInventory={item[1].itemInventory}
-                           h4Symbol="+"
+                           itemType={item[1].itemQtyType}
                            h4ClassName="nm-wght"
                            onItemClick={handleItemClick}
                           />
@@ -147,7 +147,7 @@ export default function NewSale(){
                           <h3 className="normal-weight">Price :</h3>
                           <h2>{selectedItem.itemPrice}</h2>
                         </div>
-                        <button className="delete-button" onClick={()=>deleteItem(selectedItem.itemId)}>Delete this Item<img  src={deleteBtn} alt="deletebtn"/></button>
+                        <button className="delete-button" onClick={()=>deleteItem(selectedItem.itemId)}><img  src={deleteBtn} alt="deletebtn"/></button>
                       </div>
 
 
